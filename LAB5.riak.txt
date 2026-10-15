@@ -1,0 +1,10 @@
+# LAB5 Riak KV – curl (bash). Base: http://localhost:8098
+curl -XPUT http://localhost:8098/buckets/students/keys/s1 -H "Content-Type: application/json" -d '{"id":"s1","name":"Aarav Sharma","cgpa":8.5}'
+curl http://localhost:8098/buckets/students/keys/s1
+curl -XPUT http://localhost:8098/buckets/students/keys/s1 -H "Content-Type: application/json" -d '{"id":"s1","name":"Aarav Sharma","cgpa":8.9}'
+curl -XDELETE http://localhost:8098/buckets/students/keys/s1
+curl -XPUT http://localhost:8098/buckets/user_sessions/keys/sess101 -H "Content-Type: application/json" -d '{"sessionId":"sess101","userId":"u1","status":"active"}'
+curl http://localhost:8098/buckets/user_sessions/keys/sess101
+curl -XPUT http://localhost:8098/buckets/carts/keys/u1 -H "Content-Type: application/json" -d '{"userId":"u1","items":[{"productId":"p1","qty":2,"price":500}],"total":1000}'
+curl http://localhost:8098/buckets/carts/keys/u1
+curl "http://localhost:8098/buckets/students/keys/s1?r=2&w=2"
